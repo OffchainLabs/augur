@@ -13,11 +13,6 @@ export class Controller {
   ) {
   }
 
-  public async fullTextSearch(eventName: string, query: string) {
-    const db = await this.db;
-    return db.fullTextSearch(eventName, query);
-  }
-
   public async run(): Promise<void> {
     try {
       const db = await this.db;
