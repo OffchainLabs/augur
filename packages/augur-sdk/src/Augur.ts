@@ -17,17 +17,6 @@ import { CreateYesNoMarketParams, CreateCategoricalMarketParams, CreateScalarMar
 import { Users } from "./state/getter/Users";
 import { Accounts } from "./state/getter/Accounts";
 
-export interface CustomEvent {
-  name: string;
-  eventName?: string;
-  idFields?: Array<string>;
-}
-
-export interface UserSpecificEvent extends CustomEvent {
-  numAdditionalTopics: number;
-  userTopicIndicies: Array<number>;
-}
-
 export class Augur<TProvider extends Provider = Provider> {
   public readonly provider: TProvider;
   private readonly dependencies: ContractDependenciesEthers;
@@ -40,8 +29,7 @@ export class Augur<TProvider extends Provider = Provider> {
   public readonly market: Market;
   public static connector: Connector;
 
-  // TODO Set genericEventNames & userSpecificEvents using
-  // GenericContractInterfaces instead of hardcoding them
+  // TODO Set genericEventNames using GenericContractInterfaces instead of hardcoding them
   public readonly genericEventNames: Array<string> = [
     "CompleteSetsPurchased",
     "CompleteSetsSold",
@@ -59,6 +47,7 @@ export class Augur<TProvider extends Provider = Provider> {
     "MarketParticipantsDisavowed",
     "MarketTransferred",
     "MarketVolumeChanged",
+    "MarketOIChanged",
     "OrderEvent",
     "ParticipationTokensRedeemed",
     "ReportingParticipantDisavowed",
@@ -66,34 +55,6 @@ export class Augur<TProvider extends Provider = Provider> {
     "TradingProceedsClaimed",
     "UniverseCreated",
     "UniverseForked",
-  ];
-
-  public readonly customEvents: Array<CustomEvent> = [
-    {
-      "name": "CurrentOrders",
-      "eventName": "OrderEvent",
-      "idFields": ["orderId"]
-    },
-  ]
-
-  // TODO Update numAdditionalTopics/userTopicIndexes once contract events are updated
-  public readonly userSpecificEvents: Array<UserSpecificEvent> = [
-    {
-      "name": "TokensTransferred",
-      "numAdditionalTopics": 3,
-      "userTopicIndicies": [1, 2],
-    },
-    {
-      "name": "ProfitLossChanged",
-      "numAdditionalTopics": 3,
-      "userTopicIndicies": [2],
-    },
-    {
-      "name": "TokenBalanceChanged",
-      "numAdditionalTopics": 2,
-      "userTopicIndicies": [1],
-      "idFields": ["token"]
-    },
   ];
 
   public constructor(provider: TProvider, dependencies: ContractDependenciesEthers, networkId: NetworkId, addresses: ContractAddresses, connector: Connector = new EmptyConnector()) {
