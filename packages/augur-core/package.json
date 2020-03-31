@@ -68,8 +68,6 @@
   },
   "dependencies": {
     "@0x/migrations": "4.3.2",
-    "@augurproject/artifacts": "2.0.0-alpha.2",
-    "@augurproject/solidity-docgen": "0.2.0-alpha.3",
     "@types/get-port": "4.0.1",
     "@types/mkdirp": "0.5.2",
     "async-mkdirp": "1.2.7",
@@ -77,7 +75,6 @@
     "bignumber.js": "9.0.0",
     "binascii": "0.0.2",
     "bn.js": "5.0.0",
-    "contract-dependencies-ethers": "2.0.0-alpha.2",
     "copy-dir": "0.4.0",
     "crypto-promise": "2.1.0",
     "ethers": "4.0.37",
