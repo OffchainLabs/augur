@@ -19,11 +19,11 @@
 pragma solidity 0.5.15;
 pragma experimental ABIEncoderV2;
 
-import "ROOT/0x/exchange-libs/contracts/src/LibZeroExTransaction.sol";
-import "ROOT/0x/utils/contracts/src/Refundable.sol";
-import "ROOT/0x/coordinator/contracts/src/libs/LibConstants.sol";
-import "ROOT/0x/coordinator/contracts/src/interfaces/ICoordinatorCore.sol";
-import "ROOT/0x/coordinator/contracts/src/interfaces/ICoordinatorApprovalVerifier.sol";
+import "../../../exchange-libs/contracts/src/LibZeroExTransaction.sol";
+import "../../../utils/contracts/src/Refundable.sol";
+import "./libs/LibConstants.sol";
+import "./interfaces/ICoordinatorCore.sol";
+import "./interfaces/ICoordinatorApprovalVerifier.sol";
 
 
 // solhint-disable no-empty-blocks

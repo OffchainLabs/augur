@@ -18,7 +18,7 @@
 
 pragma solidity 0.5.15;
 
-import "ROOT/0x/coordinator/contracts/src/registry/interfaces/ICoordinatorRegistryCore.sol";
+import "./interfaces/ICoordinatorRegistryCore.sol";
 
 
 // solhint-disable no-empty-blocks

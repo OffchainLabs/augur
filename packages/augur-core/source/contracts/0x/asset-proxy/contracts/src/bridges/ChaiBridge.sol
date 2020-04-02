@@ -19,10 +19,10 @@
 pragma solidity 0.5.15;
 pragma experimental ABIEncoderV2;
 
-import "ROOT/0x/asset-proxy/contracts/src/interfaces/IERC20Bridge.sol";
-import "ROOT/0x/asset-proxy/contracts/src/interfaces/IChai.sol";
-import "ROOT/0x/utils/contracts/src/DeploymentConstants.sol";
-import "ROOT/0x/erc20/contracts/src/interfaces/IERC20Token.sol";
+import "../interfaces/IERC20Bridge.sol";
+import "../interfaces/IChai.sol";
+import "../../../../utils/contracts/src/DeploymentConstants.sol";
+import "../../../../erc20/contracts/src/interfaces/IERC20Token.sol";
 
 
 // solhint-disable space-after-comma

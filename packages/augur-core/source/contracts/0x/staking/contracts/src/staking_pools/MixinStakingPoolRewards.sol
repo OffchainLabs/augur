@@ -19,10 +19,10 @@
 pragma solidity 0.5.15;
 pragma experimental ABIEncoderV2;
 
-import "ROOT/0x/exchange-libs/contracts/src/LibMath.sol";
-import "ROOT/0x/utils/contracts/src/LibSafeMath.sol";
-import "ROOT/0x/staking/contracts/src/staking_pools/MixinCumulativeRewards.sol";
-import "ROOT/0x/staking/contracts/src/sys/MixinAbstract.sol";
+import "../../../../exchange-libs/contracts/src/LibMath.sol";
+import "../../../../utils/contracts/src/LibSafeMath.sol";
+import "./MixinCumulativeRewards.sol";
+import "../sys/MixinAbstract.sol";
 
 
 contract MixinStakingPoolRewards is

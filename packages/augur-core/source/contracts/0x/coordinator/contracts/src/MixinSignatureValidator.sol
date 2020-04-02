@@ -18,9 +18,9 @@
 
 pragma solidity 0.5.15;
 
-import "ROOT/0x/utils/contracts/src/LibBytes.sol";
-import "ROOT/0x/coordinator/contracts/src/interfaces/ICoordinatorSignatureValidator.sol";
-import "ROOT/0x/coordinator/contracts/src/libs/LibCoordinatorRichErrors.sol";
+import "../../../utils/contracts/src/LibBytes.sol";
+import "./interfaces/ICoordinatorSignatureValidator.sol";
+import "./libs/LibCoordinatorRichErrors.sol";
 
 
 contract MixinSignatureValidator is

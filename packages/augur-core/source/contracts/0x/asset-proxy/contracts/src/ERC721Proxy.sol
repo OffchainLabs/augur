@@ -18,7 +18,7 @@
 
 pragma solidity 0.5.15;
 
-import "ROOT/0x/asset-proxy/contracts/archive/MixinAuthorizable.sol";
+import "../archive/MixinAuthorizable.sol";
 
 
 contract ERC721Proxy is

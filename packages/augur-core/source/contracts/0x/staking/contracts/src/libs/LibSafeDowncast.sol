@@ -19,7 +19,7 @@
 pragma solidity 0.5.15;
 
 
-import "ROOT/0x/utils/contracts/src/LibSafeMathRichErrors.sol";
+import "../../../../utils/contracts/src/LibSafeMathRichErrors.sol";
 
 
 library LibSafeDowncast {

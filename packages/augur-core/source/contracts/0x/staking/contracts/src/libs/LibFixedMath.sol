@@ -18,7 +18,7 @@
 
 pragma solidity 0.5.15;
 
-import "ROOT/0x/staking/contracts/src/libs/LibFixedMathRichErrors.sol";
+import "./LibFixedMathRichErrors.sol";
 
 
 // solhint-disable indent

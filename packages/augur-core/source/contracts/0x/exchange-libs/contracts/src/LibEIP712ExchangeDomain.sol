@@ -18,7 +18,7 @@
 
 pragma solidity 0.5.15;
 
-import "ROOT/0x/utils/contracts/src/LibEIP712.sol";
+import "../../../utils/contracts/src/LibEIP712.sol";
 
 
 contract LibEIP712ExchangeDomain {

@@ -1,12 +1,12 @@
 pragma solidity 0.5.15;
 
-import 'ROOT/gsn/IRelayHub.sol';
-import 'ROOT/gsn/IRelayRecipient.sol';
-import 'ROOT/gsn/ECDSA.sol';
-import 'ROOT/gsn/SafeMath.sol';
-import 'ROOT/gsn/RLPReader.sol';
-import 'ROOT/gsn/GsnUtils.sol';
-import 'ROOT/0x/utils/contracts/src/LibBytes.sol';
+import './IRelayHub.sol';
+import './IRelayRecipient.sol';
+import './ECDSA.sol';
+import './SafeMath.sol';
+import './RLPReader.sol';
+import './GsnUtils.sol';
+import '../0x/utils/contracts/src/LibBytes.sol';
 
 
 contract RelayHub is IRelayHub {

@@ -18,8 +18,8 @@
 
 pragma solidity 0.5.15;
 
-import "ROOT/0x/utils/contracts/src/LibBytes.sol";
-import "ROOT/0x/erc20/contracts/src/interfaces/IERC20Token.sol";
+import "../../../utils/contracts/src/LibBytes.sol";
+import "./interfaces/IERC20Token.sol";
 
 
 library LibERC20Token {

@@ -19,7 +19,7 @@
 pragma solidity 0.5.15;
 pragma experimental ABIEncoderV2;
 
-import "ROOT/0x/utils/contracts/src/LibEIP712.sol";
+import "../../../utils/contracts/src/LibEIP712.sol";
 
 
 library LibZeroExTransaction {

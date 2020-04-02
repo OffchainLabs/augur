@@ -18,7 +18,7 @@
 
 pragma solidity 0.5.15;
 
-import "ROOT/0x/exchange/contracts/src/interfaces/ITransactions.sol";
+import "../../../../exchange/contracts/src/interfaces/ITransactions.sol";
 
 
 // solhint-disable var-name-mixedcase

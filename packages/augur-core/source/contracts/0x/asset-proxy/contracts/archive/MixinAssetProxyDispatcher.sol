@@ -17,9 +17,9 @@
 */
 
 pragma solidity 0.5.15;
-import "ROOT/0x/asset-proxy/contracts/archive/Ownable.sol";
-import "ROOT/0x/asset-proxy/contracts/src/interfaces/IAssetProxy.sol";
-import "ROOT/0x/asset-proxy/contracts/src/interfaces/IAssetProxyDispatcher.sol";
+import "./Ownable.sol";
+import "../src/interfaces/IAssetProxy.sol";
+import "../src/interfaces/IAssetProxyDispatcher.sol";
 
 
 contract MixinAssetProxyDispatcher is

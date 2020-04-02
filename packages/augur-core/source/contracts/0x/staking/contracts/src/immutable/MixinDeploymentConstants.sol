@@ -18,7 +18,7 @@
 
 pragma solidity 0.5.15;
 
-import "ROOT/0x/erc20/contracts/src/interfaces/IEtherToken.sol";
+import "../../../../erc20/contracts/src/interfaces/IEtherToken.sol";
 import "../interfaces/IZrxVault.sol";
 
 

@@ -19,8 +19,8 @@
 pragma solidity 0.5.15;
 pragma experimental ABIEncoderV2;
 
-import "ROOT/0x/exchange-libs/contracts/src/LibOrder.sol";
-import "ROOT/0x/exchange-libs/contracts/src/LibZeroExTransaction.sol";
+import "../../../../exchange-libs/contracts/src/LibOrder.sol";
+import "../../../../exchange-libs/contracts/src/LibZeroExTransaction.sol";
 
 
 contract ICoordinatorApprovalVerifier {

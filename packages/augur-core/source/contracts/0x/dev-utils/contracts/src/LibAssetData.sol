@@ -19,16 +19,16 @@
 pragma solidity 0.5.15;
 pragma experimental ABIEncoderV2;
 
-import "ROOT/0x/utils/contracts/src/LibBytes.sol";
-import "ROOT/0x/exchange/contracts/src/interfaces/IExchange.sol";
-import "ROOT/0x/asset-proxy/contracts/src/interfaces/IAssetData.sol";
-import "ROOT/0x/asset-proxy/contracts/src/interfaces/IAssetProxy.sol";
-import "ROOT/0x/erc20/contracts/src/interfaces/IERC20Token.sol";
-import "ROOT/0x/erc721/contracts/src/interfaces/IERC721Token.sol";
-import "ROOT/0x/erc1155/contracts/src/interfaces/IERC1155.sol";
-import "ROOT/0x/asset-proxy/contracts/src/interfaces/IChai.sol";
-import "ROOT/0x/utils/contracts/src/DeploymentConstants.sol";
-import "ROOT/0x/exchange-libs/contracts/src/LibMath.sol";
+import "../../../utils/contracts/src/LibBytes.sol";
+import "../../../exchange/contracts/src/interfaces/IExchange.sol";
+import "../../../asset-proxy/contracts/src/interfaces/IAssetData.sol";
+import "../../../asset-proxy/contracts/src/interfaces/IAssetProxy.sol";
+import "../../../erc20/contracts/src/interfaces/IERC20Token.sol";
+import "../../../erc721/contracts/src/interfaces/IERC721Token.sol";
+import "../../../erc1155/contracts/src/interfaces/IERC1155.sol";
+import "../../../asset-proxy/contracts/src/interfaces/IChai.sol";
+import "../../../utils/contracts/src/DeploymentConstants.sol";
+import "../../../exchange-libs/contracts/src/LibMath.sol";
 
 
 contract LibAssetData is

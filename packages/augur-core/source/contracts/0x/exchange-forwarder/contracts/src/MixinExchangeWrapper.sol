@@ -19,15 +19,15 @@
 pragma solidity 0.5.15;
 pragma experimental ABIEncoderV2;
 
-import "ROOT/0x/utils/contracts/src/LibBytes.sol";
+import "../../../utils/contracts/src/LibBytes.sol";
 
-import "ROOT/0x/utils/contracts/src/LibSafeMath.sol";
-import "ROOT/0x/exchange-libs/contracts/src/LibOrder.sol";
-import "ROOT/0x/exchange-libs/contracts/src/LibFillResults.sol";
-import "ROOT/0x/exchange-libs/contracts/src/LibMath.sol";
-import "ROOT/0x/exchange/contracts/src/interfaces/IExchange.sol";
-import "ROOT/0x/asset-proxy/contracts/src/interfaces/IAssetData.sol";
-import "ROOT/0x/erc20/contracts/src/interfaces/IERC20Token.sol";
+import "../../../utils/contracts/src/LibSafeMath.sol";
+import "../../../exchange-libs/contracts/src/LibOrder.sol";
+import "../../../exchange-libs/contracts/src/LibFillResults.sol";
+import "../../../exchange-libs/contracts/src/LibMath.sol";
+import "../../../exchange/contracts/src/interfaces/IExchange.sol";
+import "../../../asset-proxy/contracts/src/interfaces/IAssetData.sol";
+import "../../../erc20/contracts/src/interfaces/IERC20Token.sol";
 import "./libs/LibConstants.sol";
 import "./libs/LibForwarderRichErrors.sol";
 import "./interfaces/IExchangeV2.sol";

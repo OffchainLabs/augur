@@ -18,12 +18,12 @@
 pragma solidity 0.5.15;
 pragma experimental ABIEncoderV2;
 
-import "ROOT/0x/utils/contracts/src/LibBytes.sol";
-import "ROOT/0x/exchange-libs/contracts/src/LibOrder.sol";
-import "ROOT/0x/exchange-libs/contracts/src/LibFillResults.sol";
-import "ROOT/0x/exchange-libs/contracts/src/LibExchangeRichErrors.sol";
-import "ROOT/0x/exchange/contracts/src/interfaces/IMatchOrders.sol";
-import "ROOT/0x/exchange/contracts/src/MixinExchangeCore.sol";
+import "../../../utils/contracts/src/LibBytes.sol";
+import "../../../exchange-libs/contracts/src/LibOrder.sol";
+import "../../../exchange-libs/contracts/src/LibFillResults.sol";
+import "../../../exchange-libs/contracts/src/LibExchangeRichErrors.sol";
+import "./interfaces/IMatchOrders.sol";
+import "./MixinExchangeCore.sol";
 
 
 contract MixinMatchOrders is

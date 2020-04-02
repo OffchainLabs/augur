@@ -18,7 +18,7 @@
 
 pragma solidity 0.5.15;
 
-import "ROOT/0x/erc20/contracts/src/interfaces/IERC20Token.sol";
+import "./IERC20Token.sol";
 
 
 contract IEtherToken is

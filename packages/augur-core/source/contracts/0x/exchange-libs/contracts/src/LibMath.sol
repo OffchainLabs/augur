@@ -18,9 +18,9 @@
 
 pragma solidity 0.5.15;
 
-import "ROOT/0x/utils/contracts/src/LibSafeMath.sol";
+import "../../../utils/contracts/src/LibSafeMath.sol";
 
-import "ROOT/0x/exchange-libs/contracts/src/LibMathRichErrors.sol";
+import "./LibMathRichErrors.sol";
 
 
 library LibMath {

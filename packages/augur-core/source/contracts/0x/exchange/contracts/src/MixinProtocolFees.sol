@@ -18,10 +18,10 @@
 
 pragma solidity 0.5.15;
 
-import "ROOT/0x/utils/contracts/src/Ownable.sol";
-import "ROOT/0x/exchange-libs/contracts/src/LibExchangeRichErrors.sol";
-import "ROOT/0x/staking/contracts/src/interfaces/IStaking.sol";
-import "ROOT/0x/exchange/contracts/src/interfaces/IProtocolFees.sol";
+import "../../../utils/contracts/src/Ownable.sol";
+import "../../../exchange-libs/contracts/src/LibExchangeRichErrors.sol";
+import "../../../staking/contracts/src/interfaces/IStaking.sol";
+import "./interfaces/IProtocolFees.sol";
 
 
 contract MixinProtocolFees is

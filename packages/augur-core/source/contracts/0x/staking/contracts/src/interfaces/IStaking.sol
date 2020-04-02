@@ -19,9 +19,9 @@
 pragma solidity 0.5.15;
 pragma experimental ABIEncoderV2;
 
-import "ROOT/0x/erc20/contracts/src/interfaces/IEtherToken.sol";
-import "ROOT/0x/staking/contracts/src/interfaces/IStructs.sol";
-import "ROOT/0x/staking/contracts/src/interfaces/IZrxVault.sol";
+import "../../../../erc20/contracts/src/interfaces/IEtherToken.sol";
+import "./IStructs.sol";
+import "./IZrxVault.sol";
 
 
 interface IStaking {

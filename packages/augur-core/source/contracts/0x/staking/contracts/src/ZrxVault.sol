@@ -18,14 +18,14 @@
 
 pragma solidity 0.5.15;
 
-import "ROOT/0x/utils/contracts/src/Authorizable.sol";
+import "../../../utils/contracts/src/Authorizable.sol";
 
-import "ROOT/0x/utils/contracts/src/LibSafeMath.sol";
-import "ROOT/0x/asset-proxy/contracts/src/interfaces/IAssetProxy.sol";
-import "ROOT/0x/asset-proxy/contracts/src/interfaces/IAssetData.sol";
-import "ROOT/0x/erc20/contracts/src/interfaces/IERC20Token.sol";
-import "ROOT/0x/staking/contracts/src/libs/LibStakingRichErrors.sol";
-import "ROOT/0x/staking/contracts/src/interfaces/IZrxVault.sol";
+import "../../../utils/contracts/src/LibSafeMath.sol";
+import "../../../asset-proxy/contracts/src/interfaces/IAssetProxy.sol";
+import "../../../asset-proxy/contracts/src/interfaces/IAssetData.sol";
+import "../../../erc20/contracts/src/interfaces/IERC20Token.sol";
+import "./libs/LibStakingRichErrors.sol";
+import "./interfaces/IZrxVault.sol";
 
 
 contract ZrxVault is

@@ -18,9 +18,9 @@
 
 pragma solidity 0.5.15;
 
-import "ROOT/0x/utils/contracts/src/LibSafeMath.sol";
-import "ROOT/0x/exchange-libs/contracts/src/LibMath.sol";
-import "ROOT/0x/exchange-libs/contracts/src/LibOrder.sol";
+import "../../../utils/contracts/src/LibSafeMath.sol";
+import "./LibMath.sol";
+import "./LibOrder.sol";
 
 
 library LibFillResults {

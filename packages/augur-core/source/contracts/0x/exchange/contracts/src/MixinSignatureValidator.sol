@@ -19,18 +19,18 @@
 pragma solidity 0.5.15;
 pragma experimental ABIEncoderV2;
 
-import "ROOT/0x/utils/contracts/src/LibBytes.sol";
-import "ROOT/0x/utils/contracts/src/LibEIP1271.sol";
+import "../../../utils/contracts/src/LibBytes.sol";
+import "../../../utils/contracts/src/LibEIP1271.sol";
 
-import "ROOT/0x/exchange-libs/contracts/src/LibOrder.sol";
-import "ROOT/0x/exchange-libs/contracts/src/LibZeroExTransaction.sol";
-import "ROOT/0x/exchange-libs/contracts/src/LibEIP712ExchangeDomain.sol";
-import "ROOT/0x/exchange-libs/contracts/src/LibExchangeRichErrors.sol";
-import "ROOT/0x/exchange/contracts/src/interfaces/IWallet.sol";
-import "ROOT/0x/exchange/contracts/src/interfaces/IEIP1271Wallet.sol";
-import "ROOT/0x/exchange/contracts/src/interfaces/ISignatureValidator.sol";
-import "ROOT/0x/exchange/contracts/src/interfaces/IEIP1271Data.sol";
-import "ROOT/0x/exchange/contracts/src/MixinTransactions.sol";
+import "../../../exchange-libs/contracts/src/LibOrder.sol";
+import "../../../exchange-libs/contracts/src/LibZeroExTransaction.sol";
+import "../../../exchange-libs/contracts/src/LibEIP712ExchangeDomain.sol";
+import "../../../exchange-libs/contracts/src/LibExchangeRichErrors.sol";
+import "./interfaces/IWallet.sol";
+import "./interfaces/IEIP1271Wallet.sol";
+import "./interfaces/ISignatureValidator.sol";
+import "./interfaces/IEIP1271Data.sol";
+import "./MixinTransactions.sol";
 
 
 contract MixinSignatureValidator is

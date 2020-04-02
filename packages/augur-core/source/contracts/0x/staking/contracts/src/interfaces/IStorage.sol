@@ -19,8 +19,8 @@
 pragma solidity 0.5.15;
 pragma experimental ABIEncoderV2;
 
-import "ROOT/0x/staking/contracts/src/interfaces/IZrxVault.sol";
-import "ROOT/0x/staking/contracts/src/interfaces/IStructs.sol";
+import "./IZrxVault.sol";
+import "./IStructs.sol";
 
 
 interface IStorage {

@@ -19,12 +19,12 @@
 pragma solidity 0.5.15;
 pragma experimental ABIEncoderV2;
 
-import "ROOT/0x/utils/contracts/src/LibBytes.sol";
-import "ROOT/0x/utils/contracts/src/LibSafeMath.sol";
-import "ROOT/0x/utils/contracts/src/Authorizable.sol";
-import "ROOT/0x/erc20/contracts/src/interfaces/IERC20Token.sol";
-import "ROOT/0x/asset-proxy/contracts/src/interfaces/IAssetProxy.sol";
-import "ROOT/0x/asset-proxy/contracts/src/interfaces/IERC20Bridge.sol";
+import "../../../utils/contracts/src/LibBytes.sol";
+import "../../../utils/contracts/src/LibSafeMath.sol";
+import "../../../utils/contracts/src/Authorizable.sol";
+import "../../../erc20/contracts/src/interfaces/IERC20Token.sol";
+import "./interfaces/IAssetProxy.sol";
+import "./interfaces/IERC20Bridge.sol";
 
 
 contract ERC20BridgeProxy is

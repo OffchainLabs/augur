@@ -19,13 +19,13 @@
 pragma solidity 0.5.15;
 pragma experimental ABIEncoderV2;
 
-import "ROOT/0x/exchange/contracts/src/interfaces/IExchange.sol";
-import "ROOT/0x/exchange-libs/contracts/src/LibOrder.sol";
-import "ROOT/0x/exchange-libs/contracts/src/LibMath.sol";
-import "ROOT/0x/utils/contracts/src/LibBytes.sol";
-import "ROOT/0x/utils/contracts/src/LibSafeMath.sol";
-import "ROOT/0x/dev-utils/contracts/src/LibAssetData.sol";
-import "ROOT/0x/dev-utils/contracts/src/OrderTransferSimulationUtils.sol";
+import "../../../exchange/contracts/src/interfaces/IExchange.sol";
+import "../../../exchange-libs/contracts/src/LibOrder.sol";
+import "../../../exchange-libs/contracts/src/LibMath.sol";
+import "../../../utils/contracts/src/LibBytes.sol";
+import "../../../utils/contracts/src/LibSafeMath.sol";
+import "./LibAssetData.sol";
+import "./OrderTransferSimulationUtils.sol";
 
 
 contract OrderValidationUtils is

@@ -18,11 +18,11 @@
 
 pragma solidity 0.5.15;
 
-import "ROOT/0x/utils/contracts/src/LibBytes.sol";
+import "../../../utils/contracts/src/LibBytes.sol";
 
-import "ROOT/0x/utils/contracts/src/Ownable.sol";
-import "ROOT/0x/erc20/contracts/src/LibERC20Token.sol";
-import "ROOT/0x/asset-proxy/contracts/src/interfaces/IAssetData.sol";
+import "../../../utils/contracts/src/Ownable.sol";
+import "../../../erc20/contracts/src/LibERC20Token.sol";
+import "../../../asset-proxy/contracts/src/interfaces/IAssetData.sol";
 import "./libs/LibConstants.sol";
 import "./libs/LibAssetDataTransfer.sol";
 import "./libs/LibForwarderRichErrors.sol";

@@ -18,8 +18,8 @@
 
 pragma solidity 0.5.15;
 
-import "ROOT/0x/utils/contracts/src/LibSafeMath.sol";
-import "ROOT/0x/erc20/contracts/src/UnlimitedAllowanceERC20Token.sol";
+import "../../../utils/contracts/src/LibSafeMath.sol";
+import "./UnlimitedAllowanceERC20Token.sol";
 
 
 contract MintableERC20Token is

@@ -18,9 +18,9 @@
 
 pragma solidity 0.5.15;
 
-import "ROOT/0x/utils/contracts/src/interfaces/IAuthorizable.sol";
+import "./interfaces/IAuthorizable.sol";
 
-import "ROOT/0x/utils/contracts/src/Ownable.sol";
+import "./Ownable.sol";
 
 
 // solhint-disable no-empty-blocks

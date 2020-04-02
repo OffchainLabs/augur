@@ -18,9 +18,9 @@
 
 pragma solidity 0.5.15;
 
-import "ROOT/0x/exchange-libs/contracts/src/LibOrder.sol";
-import "ROOT/0x/exchange-libs/contracts/src/LibExchangeRichErrors.sol";
-import "ROOT/0x/utils/contracts/src/LibBytes.sol";
+import "../../../../exchange-libs/contracts/src/LibOrder.sol";
+import "../../../../exchange-libs/contracts/src/LibExchangeRichErrors.sol";
+import "../../../../utils/contracts/src/LibBytes.sol";
 
 
 contract LibExchangeRichErrorDecoder {

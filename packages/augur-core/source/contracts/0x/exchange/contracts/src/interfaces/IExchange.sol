@@ -19,14 +19,14 @@
 pragma solidity 0.5.15;
 pragma experimental ABIEncoderV2;
 
-import "ROOT/0x/exchange/contracts/src/interfaces/IExchangeCore.sol";
-import "ROOT/0x/exchange/contracts/src/interfaces/IProtocolFees.sol";
-import "ROOT/0x/exchange/contracts/src/interfaces/IMatchOrders.sol";
-import "ROOT/0x/exchange/contracts/src/interfaces/ISignatureValidator.sol";
-import "ROOT/0x/exchange/contracts/src/interfaces/ITransactions.sol";
-import "ROOT/0x/exchange/contracts/src/interfaces/IAssetProxyDispatcher.sol";
-import "ROOT/0x/exchange/contracts/src/interfaces/IWrapperFunctions.sol";
-import "ROOT/0x/exchange/contracts/src/interfaces/ITransferSimulator.sol";
+import "./IExchangeCore.sol";
+import "./IProtocolFees.sol";
+import "./IMatchOrders.sol";
+import "./ISignatureValidator.sol";
+import "./ITransactions.sol";
+import "./IAssetProxyDispatcher.sol";
+import "./IWrapperFunctions.sol";
+import "./ITransferSimulator.sol";
 
 
 // solhint-disable no-empty-blocks

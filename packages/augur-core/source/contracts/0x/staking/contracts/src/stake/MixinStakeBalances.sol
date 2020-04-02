@@ -19,10 +19,10 @@
 pragma solidity 0.5.15;
 pragma experimental ABIEncoderV2;
 
-import "ROOT/0x/utils/contracts/src/LibSafeMath.sol";
-import "ROOT/0x/staking/contracts/src/interfaces/IStructs.sol";
-import "ROOT/0x/staking/contracts/src/immutable/MixinDeploymentConstants.sol";
-import "ROOT/0x/staking/contracts/src/stake/MixinStakeStorage.sol";
+import "../../../../utils/contracts/src/LibSafeMath.sol";
+import "../interfaces/IStructs.sol";
+import "../immutable/MixinDeploymentConstants.sol";
+import "./MixinStakeStorage.sol";
 
 
 contract MixinStakeBalances is

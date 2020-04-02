@@ -19,16 +19,16 @@
 pragma solidity 0.5.15;
 pragma experimental ABIEncoderV2;
 
-import "ROOT/0x/exchange-libs/contracts/src/LibEIP712ExchangeDomain.sol";
-import "ROOT/0x/exchange-libs/contracts/src/LibOrder.sol";
-import "ROOT/0x/exchange-libs/contracts/src/LibZeroExTransaction.sol";
-import "ROOT/0x/utils/contracts/src/LibAddressArray.sol";
-import "ROOT/0x/utils/contracts/src/LibBytes.sol";
-import "ROOT/0x/exchange/contracts/src/interfaces/IExchange.sol";
-import "ROOT/0x/coordinator/contracts/src/libs/LibCoordinatorApproval.sol";
-import "ROOT/0x/coordinator/contracts/src/libs/LibCoordinatorRichErrors.sol";
-import "ROOT/0x/coordinator/contracts/src/interfaces/ICoordinatorSignatureValidator.sol";
-import "ROOT/0x/coordinator/contracts/src/interfaces/ICoordinatorApprovalVerifier.sol";
+import "../../../exchange-libs/contracts/src/LibEIP712ExchangeDomain.sol";
+import "../../../exchange-libs/contracts/src/LibOrder.sol";
+import "../../../exchange-libs/contracts/src/LibZeroExTransaction.sol";
+import "../../../utils/contracts/src/LibAddressArray.sol";
+import "../../../utils/contracts/src/LibBytes.sol";
+import "../../../exchange/contracts/src/interfaces/IExchange.sol";
+import "./libs/LibCoordinatorApproval.sol";
+import "./libs/LibCoordinatorRichErrors.sol";
+import "./interfaces/ICoordinatorSignatureValidator.sol";
+import "./interfaces/ICoordinatorApprovalVerifier.sol";
 
 
 // solhint-disable avoid-tx-origin

@@ -19,8 +19,8 @@
 pragma solidity 0.5.15;
 pragma experimental ABIEncoderV2;
 
-import "ROOT/0x/utils/contracts/src/LibSafeMath.sol";
-import "ROOT/0x/utils/contracts/src/LibAddress.sol";
+import "../../../utils/contracts/src/LibSafeMath.sol";
+import "../../../utils/contracts/src/LibAddress.sol";
 import "./interfaces/IERC1155.sol";
 import "./interfaces/IERC1155Receiver.sol";
 import "./MixinNonFungibleToken.sol";

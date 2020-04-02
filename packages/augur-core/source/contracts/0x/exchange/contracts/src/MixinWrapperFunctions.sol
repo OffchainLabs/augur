@@ -19,15 +19,15 @@
 pragma solidity 0.5.15;
 pragma experimental ABIEncoderV2;
 
-import "ROOT/0x/utils/contracts/src/LibSafeMath.sol";
+import "../../../utils/contracts/src/LibSafeMath.sol";
 
-import "ROOT/0x/exchange-libs/contracts/src/LibOrder.sol";
-import "ROOT/0x/exchange-libs/contracts/src/LibMath.sol";
-import "ROOT/0x/exchange-libs/contracts/src/LibFillResults.sol";
-import "ROOT/0x/exchange-libs/contracts/src/LibExchangeRichErrors.sol";
-import "ROOT/0x/exchange/contracts/src/interfaces/IExchangeCore.sol";
-import "ROOT/0x/exchange/contracts/src/interfaces/IWrapperFunctions.sol";
-import "ROOT/0x/exchange/contracts/src/MixinExchangeCore.sol";
+import "../../../exchange-libs/contracts/src/LibOrder.sol";
+import "../../../exchange-libs/contracts/src/LibMath.sol";
+import "../../../exchange-libs/contracts/src/LibFillResults.sol";
+import "../../../exchange-libs/contracts/src/LibExchangeRichErrors.sol";
+import "./interfaces/IExchangeCore.sol";
+import "./interfaces/IWrapperFunctions.sol";
+import "./MixinExchangeCore.sol";
 
 
 contract MixinWrapperFunctions is

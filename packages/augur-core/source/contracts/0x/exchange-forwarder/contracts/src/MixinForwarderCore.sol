@@ -19,12 +19,12 @@
 pragma solidity 0.5.15;
 pragma experimental ABIEncoderV2;
 
-import "ROOT/0x/utils/contracts/src/LibBytes.sol";
+import "../../../utils/contracts/src/LibBytes.sol";
 
-import "ROOT/0x/utils/contracts/src/LibSafeMath.sol";
-import "ROOT/0x/exchange-libs/contracts/src/LibOrder.sol";
-import "ROOT/0x/exchange-libs/contracts/src/LibMath.sol";
-import "ROOT/0x/asset-proxy/contracts/src/interfaces/IAssetData.sol";
+import "../../../utils/contracts/src/LibSafeMath.sol";
+import "../../../exchange-libs/contracts/src/LibOrder.sol";
+import "../../../exchange-libs/contracts/src/LibMath.sol";
+import "../../../asset-proxy/contracts/src/interfaces/IAssetData.sol";
 import "./libs/LibConstants.sol";
 import "./libs/LibForwarderRichErrors.sol";
 import "./interfaces/IAssets.sol";
