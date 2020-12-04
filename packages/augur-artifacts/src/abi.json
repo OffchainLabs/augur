@@ -31462,6 +31462,103 @@
 			"type": "function"
 		}
 	],
+	"ArbitrumBridge": [
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "_pushBridgeAddress",
+					"type": "address"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "constructor"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "marketAddress",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "arbChainAddress",
+					"type": "address"
+				}
+			],
+			"name": "pushBridgeData",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "universeAddress",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "arbChainAddress",
+					"type": "address"
+				}
+			],
+			"name": "pushFeeData",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "arbChainAddress",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "inboxAddress",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "marketGetterAddress",
+					"type": "address"
+				}
+			],
+			"name": "registerArbchain",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		}
+	],
 	"DisputeCrowdsourcer": [
 		{
 			"anonymous": false,
@@ -38605,6 +38702,280 @@
 			"type": "function"
 		}
 	],
+	"ArbitrumMarketGetter": [
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "marketAddress",
+					"type": "address"
+				}
+			],
+			"name": "getAffiliateFeeDivisor",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "marketAddress",
+					"type": "address"
+				}
+			],
+			"name": "getCreatorFee",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "marketAddress",
+					"type": "address"
+				}
+			],
+			"name": "getNumTicks",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "marketAddress",
+					"type": "address"
+				}
+			],
+			"name": "getNumberOfOutcomes",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [],
+			"name": "getOrCacheReportingFeeDivisor",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "marketAddress",
+					"type": "address"
+				}
+			],
+			"name": "getOwner",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "marketAddress",
+					"type": "address"
+				}
+			],
+			"name": "getUniverse",
+			"outputs": [
+				{
+					"internalType": "contract IUniverse",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "marketAddress",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "_outcome",
+					"type": "uint256"
+				}
+			],
+			"name": "getWinningPayoutNumerator",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "marketAddress",
+					"type": "address"
+				}
+			],
+			"name": "isFinalized",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "marketAddress",
+					"type": "address"
+				}
+			],
+			"name": "isFinalizedAsInvalid",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "marketAddress",
+					"type": "address"
+				}
+			],
+			"name": "isValid",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "bytes",
+					"name": "_feeData",
+					"type": "bytes"
+				}
+			],
+			"name": "receiveFeeData",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "bytes",
+					"name": "_marketData",
+					"type": "bytes"
+				}
+			],
+			"name": "receiveMarketData",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		}
+	],
 	"AugurPushBridge": [
 		{
 			"constant": false,
@@ -38663,6 +39034,16 @@
 							"internalType": "uint256",
 							"name": "affiliateFeeDivisor",
 							"type": "uint256"
+						},
+						{
+							"internalType": "address",
+							"name": "marketAddress",
+							"type": "address"
+						},
+						{
+							"internalType": "bool",
+							"name": "exists",
+							"type": "bool"
 						}
 					],
 					"internalType": "struct IAugurPushBridge.MarketData",
@@ -44324,6 +44705,16 @@
 					"internalType": "uint256",
 					"name": "affiliateFeeDivisor",
 					"type": "uint256"
+				},
+				{
+					"internalType": "address",
+					"name": "marketAddress",
+					"type": "address"
+				},
+				{
+					"internalType": "bool",
+					"name": "exists",
+					"type": "bool"
 				}
 			],
 			"payable": false,

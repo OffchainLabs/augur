@@ -71,6 +71,7 @@ export const INTERNAL_CONTRACTS = [
     'SimulateTradeFactory',
     'TradeFactory',
     'ZeroXTradeFactory',
+    'ArbitrumBridge',
     // Gov
     'Governance',
     'GovToken',
@@ -85,7 +86,8 @@ export const INTERNAL_CONTRACTS = [
     'SideChainFillOrder',
     'SideChainProfitLoss',
     'SideChainZeroXTrade',
-    'SideChainSimulateTrade'
+    'SideChainSimulateTrade',
+    'ArbitrumMarketGetter'
 ];
 
 export const TRADING_CONTRACTS = [

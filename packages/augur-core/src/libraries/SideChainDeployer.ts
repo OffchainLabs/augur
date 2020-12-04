@@ -61,18 +61,19 @@ Deploying to: ${env}
 
     async deploy(env: string): Promise<SideChainDeploy> {
         const blockNumber = await this.getBlockNumber();
-
+        const isArbDeploy =  this.configuration.deploy.arbitrum
+        
         let sideChainExternalAddresses = this.configuration.deploy.sideChainExternalAddresses;
         const addresses = {};
 
         if (!this.configuration.deploy.isProduction) {
             const sideChainCashAddress = await this.construct(this.contracts.get("Cash"), []);
             const augurPushBridgeAddress = await this.construct(this.contracts.get("AugurPushBridge"), []);
-            const testBridgeContractAddress = await this.construct(this.contracts.get("TestBridgeContract"), [sideChainCashAddress, this.configuration.addresses.OICash, this.configuration.addresses.Universe, augurPushBridgeAddress]);
+            const marketGetterAddress = isArbDeploy ? await this.construct(this.contracts.get("ArbitrumMarketGetter"),[]) : await this.construct(this.contracts.get("TestBridgeContract"), [sideChainCashAddress, this.configuration.addresses.OICash, this.configuration.addresses.Universe, augurPushBridgeAddress]);
             sideChainExternalAddresses = {
                 Cash: sideChainCashAddress,
-                MarketGetter: testBridgeContractAddress,
-                RepFeeTarget: testBridgeContractAddress,
+                MarketGetter: marketGetterAddress,
+                RepFeeTarget: marketGetterAddress,
                 ZeroXExchange: this.configuration.addresses.Exchange
             }
         } else if (!sideChainExternalAddresses) {
@@ -92,8 +93,7 @@ Deploying to: ${env}
         }
 
         const sideChainAugur = new SideChainAugur(this.dependencies, addresses["SideChainAugur"]);
-        const sideChainAugurTrading = new SideChainAugurTrading(this.dependencies, addresses["SideChainAugurTrading"]);
-
+        const sideChainAugurTrading = new SideChainAugurTrading(this.dependencies, addresses["SideChainAugurTrading"]);        
         await sideChainAugur.registerContract(stringTo32ByteHex("Cash"), sideChainExternalAddresses.Cash);
         await sideChainAugur.registerContract(stringTo32ByteHex("ShareToken"), addresses["SideChainShareToken"]);
         await sideChainAugur.registerContract(stringTo32ByteHex("Affiliates"), addresses["Affiliates"]);
@@ -101,9 +101,9 @@ Deploying to: ${env}
         await sideChainAugur.registerContract(stringTo32ByteHex("RepFeeTarget"), sideChainExternalAddresses.RepFeeTarget);
 
         await sideChainAugurTrading.registerContract(stringTo32ByteHex("FillOrder"), addresses["SideChainFillOrder"]);
-        await sideChainAugurTrading.registerContract(stringTo32ByteHex("ZeroXTrade"), addresses["SideChainZeroXTrade"]);
+        await sideChainAugurTrading.registerContract(stringTo32ByteHex("ZeroXTrade"), addresses["SideChainZeroXTrade"]);        
         await sideChainAugurTrading.registerContract(stringTo32ByteHex("ProfitLoss"), addresses["SideChainProfitLoss"]);
-        await sideChainAugurTrading.registerContract(stringTo32ByteHex("ZeroXExchange"), sideChainExternalAddresses.ZeroXExchange);
+        await sideChainAugurTrading.registerContract(stringTo32ByteHex("ZeroXExchange"), addresses['SideChainZeroXTrade']);
 
         const sideChainShareToken = new SideChainShareToken(this.dependencies, addresses["SideChainShareToken"]);
         const sideChainFillOrder = new SideChainFillOrder(this.dependencies, addresses["SideChainFillOrder"]);
@@ -153,8 +153,10 @@ Deploying to: ${env}
 
     private async construct(contract: ContractData, constructorArgs: string[]): Promise<string> {
         console.log(`Upload contract: ${contract.contractName}`);
+        const { deploy, gas } = this.configuration 
+        const deployOptions =  deploy.arbitrum ? {gasPrice: gas.price, gasLimit: gas.limit } : {}
         const factory = new ethers.ContractFactory(contract.abi, contract.bytecode, this.signer);
-        const contractObj = await factory.deploy(...constructorArgs);
+        const contractObj = await factory.deploy(...constructorArgs, deployOptions);
         await contractObj.deployed();
         console.log(`Uploaded contract: ${contract.contractName}: \"${contractObj.address}\"`);
         return contractObj.address;

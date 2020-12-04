@@ -79,6 +79,7 @@ export interface SDKConfiguration {
     writeArtifacts?: boolean,
     externalAddresses?: ExternalAddresses,
     sideChainExternalAddresses?: SideChainExternalAddresses,
+    arbitrum?: boolean
   },
   warpSync?: {
     createCheckpoints?: boolean,

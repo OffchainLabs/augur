@@ -13,8 +13,8 @@
   },
   "gas": {
     "override": false,
-    "price": 1000000000,
-    "limit": 9500000
+    "price": 0,
+    "limit": 21000000
   },
   "deploy": {
     "isProduction": false,
@@ -22,7 +22,8 @@
     "normalTime": true,
     "writeArtifacts": true,
     "serial": true,
-    "externalAddresses": {}
+    "externalAddresses": {},
+    "arbitrum": true
   },
   "warpSync": {
     "createCheckpoints": false,
@@ -114,24 +115,23 @@
     "USDC": "0x03722982dBb5b038348feF5a1Bc7f6e0f3d4C34E",
     "USDT": "0x1997d08B1a9aeD5143b995e929707400625D5f6C",
     "AccountLoader": "0x679FA27db29b84BE82C2b6d1fBdEb583D8f89d40",
-    "AugurPushBridge": "0xD65f9c350eD35e8339a228fF27Efd2d9BBA17C0b" //manually added - any others?
-
+    "AugurPushBridge": "0x5890C2FEE9c995eA3f4AaeCC8bcc4a90FFbA3A6e"
   },
   "sideChain": {
-    "uploadBlockNumber": 22411620,
+    "uploadBlockNumber": 22428064,
     "addresses": {
-      "Augur": "0xa2207BB135287a4EB3ae4De32A0b99d112ae57B0",
+      "Augur": "0x1069D7A1efe70473e47FD490253EA84ddbEb26aa",
       "Universe": "0x48CB0042B1c0AE139Fd6b83481613a10Af4a32A8",
-      "ShareToken": "0x4CD7aaC27ca8f6B11d03E34058D2D121255FfBDF",
-      "Cash": "0x65F3a1A420679F9161C2b949Ac372ab2bF091Edc",
-      "Affiliates": "0x00Bee9d82DA7036c9C660E7Ae18C4F5e2f072967",
-      "AugurTrading": "0xa2A073790EC3ed745afC374F76B73c3178f5536C",
-      "FillOrder": "0x897516718140A2BBB9730904823F9dB6D9Ae28C0",
-      "SimulateTrade": "0x642e1eaeD86d4075253c34c307D34362d2247D18",
-      "ZeroXTrade": "0xae0ADF9e3f9603e019980c287d91Fc83056D7235",
-      "ProfitLoss": "0x658655115E55fa3433B9686865f011874BD71083",
-      "MarketGetter": "0x93123669C6C6F1eF214acbc064b7f9Ca8aA580d8",
-      "RepFeeTarget": "0x93123669C6C6F1eF214acbc064b7f9Ca8aA580d8"
+      "ShareToken": "0x61d2A938201BeF4B19efa5CE3BBD5cAc140Ebc31",
+      "Cash": "0x63F726c426dcFe35d4Fb63584B23EB224Df8C47e",
+      "Affiliates": "0x4A706aFd07413935309a4527c4192Ac54FD4e346",
+      "AugurTrading": "0xedED96bc60DBe341bcd532ef3502C550b414e033",
+      "FillOrder": "0xFC64CBfcC751C0999d9002d744e57c18f1def34c",
+      "SimulateTrade": "0x3c53f7E8D07e689205b4758d7f32c11B1Ed0b382",
+      "ZeroXTrade": "0xFAA1C9E7dd9F4EbC61745Fc62D02E54735cDE210",
+      "ProfitLoss": "0x90b1045ea7A5EE03F680293a1485794f51575793",
+      "MarketGetter": "0x6a3aef47eFCA6bD539B0C703909d86B1B863e87b",
+      "RepFeeTarget": "0x6a3aef47eFCA6bD539B0C703909d86B1B863e87b"
     }
   }
 }
