@@ -9,6 +9,7 @@ import 'ROOT/sidechain/interfaces/IGlobalInbox.sol';
 contract ArbitrumBridge {
 
     IAugurPushBridge private augurPushBridge;
+    owner public address;
 
     struct ArbChainData {
         address inboxAddress;
@@ -22,8 +23,7 @@ contract ArbitrumBridge {
         augurPushBridge = IAugurPushBridge(_pushBridgeAddress);
     }
 
-    function registerArbchain(address arbChainAddress, address inboxAddress, address marketGetterAddress) external returns(bool) {
-        // TODO: permission: only owner?
+    function registerArbchain(address arbChainAddress, address inboxAddress, address marketGetterAddress) external isOwner returns(bool) {
         arbChainsRegistry[arbChainAddress] = ArbChainData({
             inboxAddress: inboxAddress,
             marketGetterAddress: marketGetterAddress,
@@ -38,6 +38,8 @@ contract ArbitrumBridge {
         require(arbChainData.exists, "Arbchain not registered");
 
         IMarket market = IMarket(marketAddress);
+        require(market.owner != address(0), "Market doesn't exist");
+        
         IAugurPushBridge.MarketData memory marketData = augurPushBridge.bridgeMarket(market);
         marketData.marketAddress = marketAddress;
         bytes memory marketDataPayload = abi.encodeWithSignature("receiveMarketData(bytes)", marketData);
@@ -58,6 +60,16 @@ contract ArbitrumBridge {
         bytes memory l2MessagePayload = abi.encode(1000000, 0, arbChainData.marketGetterAddress, 0, feeData);
         IGlobalInbox(arbChainData.inboxAddress).sendL2Message(arbChainAddress,l2MessagePayload);
         return true;
+    }
+
+    function transferOwnership(address newOwner) public isOwner {
+        require(newOwner != address(0));
+        owner = newOwner;
+    }
+
+    modifier isOwner() {
+        require(msg.sender == owner);
+        _;
     }
 
 
