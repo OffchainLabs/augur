@@ -69,7 +69,7 @@ Deploying to: ${env}
         if (!this.configuration.deploy.isProduction) {
             const sideChainCashAddress = await this.construct(this.contracts.get("Cash"), []);
             const augurPushBridgeAddress = await this.construct(this.contracts.get("AugurPushBridge"), []);
-            const marketGetterAddress = isArbDeploy ? await this.construct(this.contracts.get("ArbitrumMarketGetter"),[]) : await this.construct(this.contracts.get("TestBridgeContract"), [sideChainCashAddress, this.configuration.addresses.OICash, this.configuration.addresses.Universe, augurPushBridgeAddress]);
+            const marketGetterAddress = isArbDeploy ? await this.construct(this.contracts.get("ArbitrumMarketGetter"),[this.configuration.addresses.ArbitrumBridge]) : await this.construct(this.contracts.get("TestBridgeContract"), [sideChainCashAddress, this.configuration.addresses.OICash, this.configuration.addresses.Universe, augurPushBridgeAddress]);
             sideChainExternalAddresses = {
                 Cash: sideChainCashAddress,
                 MarketGetter: marketGetterAddress,
@@ -103,6 +103,7 @@ Deploying to: ${env}
         await sideChainAugurTrading.registerContract(stringTo32ByteHex("FillOrder"), addresses["SideChainFillOrder"]);
         await sideChainAugurTrading.registerContract(stringTo32ByteHex("ZeroXTrade"), addresses["SideChainZeroXTrade"]);        
         await sideChainAugurTrading.registerContract(stringTo32ByteHex("ProfitLoss"), addresses["SideChainProfitLoss"]);
+        // TODO
         await sideChainAugurTrading.registerContract(stringTo32ByteHex("ZeroXExchange"), addresses['SideChainZeroXTrade']);
 
         const sideChainShareToken = new SideChainShareToken(this.dependencies, addresses["SideChainShareToken"]);

@@ -115,7 +115,8 @@
     "USDC": "0x03722982dBb5b038348feF5a1Bc7f6e0f3d4C34E",
     "USDT": "0x1997d08B1a9aeD5143b995e929707400625D5f6C",
     "AccountLoader": "0x679FA27db29b84BE82C2b6d1fBdEb583D8f89d40",
-    "AugurPushBridge": "0x5890C2FEE9c995eA3f4AaeCC8bcc4a90FFbA3A6e"
+    "AugurPushBridge": "0x5890C2FEE9c995eA3f4AaeCC8bcc4a90FFbA3A6e",
+    "ArbitrumBridge": "0x5890C2FEE9c995eA3f4AaeCC8bcc4a90FFbA3A6e"
   },
   "sideChain": {
     "uploadBlockNumber": 22428064,
