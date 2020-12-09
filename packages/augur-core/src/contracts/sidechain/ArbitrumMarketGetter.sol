@@ -11,12 +11,10 @@ contract ArbitrumMarketGetter is IMarketGetter{
     mapping(address => IAugurPushBridge.MarketData ) private markets;
     uint256 private reportingFeeDivisor;
 
-    function receiveMarketData(bytes calldata _marketData) external returns(bool){
-       IAugurPushBridge.MarketData memory marketData = abi.decode(_marketData, (IAugurPushBridge.MarketData));
-       marketData.exists = true;
-       markets[marketData.marketAddress] = marketData;
+    function receiveMarketData(bytes calldata _marketData, address marketAddress) external returns(bool){
+       IAugurPushBridge.MarketData memory marketData = abi.decode(_marketData, (IAugurPushBridge.MarketData, address));
+       markets[marketAddress] = marketData;
        return true;
-
     }
 
     function receiveFeeData(bytes calldata _feeData) external returns(bool){
@@ -28,7 +26,7 @@ contract ArbitrumMarketGetter is IMarketGetter{
 
     function getMarket(address marketAddress) internal view returns(IAugurPushBridge.MarketData memory){
         IAugurPushBridge.MarketData memory market = markets[marketAddress];
-        require(market.exists, "No market registered at address");
+        require(market.universe != address(0), "No market registered at address");
         return market;
     }
 

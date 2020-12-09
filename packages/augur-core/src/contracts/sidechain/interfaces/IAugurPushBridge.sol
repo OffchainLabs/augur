@@ -4,6 +4,7 @@ pragma experimental ABIEncoderV2;
 import 'ROOT/reporting/IMarket.sol';
 import 'ROOT/reporting/IUniverse.sol';
 
+
 interface IAugurPushBridge {
 
     struct MarketData {
@@ -16,9 +17,6 @@ interface IAugurPushBridge {
         uint256 numOutcomes;
         uint256[] winningPayout;
         uint256 affiliateFeeDivisor;
-        address marketAddress;         // needs address as well?
-        bool exists;
-
     }
 
     function bridgeMarket(IMarket _market) external returns (MarketData memory);

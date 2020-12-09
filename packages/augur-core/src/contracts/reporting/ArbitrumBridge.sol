@@ -14,7 +14,6 @@ contract ArbitrumBridge {
     struct ArbChainData {
         address inboxAddress;
         address marketGetterAddress;
-        bool exists;
     }
 
     mapping(address => ArbChainData ) private arbChainsRegistry;
@@ -26,8 +25,7 @@ contract ArbitrumBridge {
     function registerArbchain(address arbChainAddress, address inboxAddress, address marketGetterAddress) external isOwner returns(bool) {
         arbChainsRegistry[arbChainAddress] = ArbChainData({
             inboxAddress: inboxAddress,
-            marketGetterAddress: marketGetterAddress,
-            exists: true
+            marketGetterAddress: marketGetterAddress
         });
         return true;
     }
@@ -35,14 +33,13 @@ contract ArbitrumBridge {
 
     function pushBridgeData (address marketAddress, address arbChainAddress) external returns(bool){
         ArbChainData memory arbChainData = arbChainsRegistry[arbChainAddress];
-        require(arbChainData.exists, "Arbchain not registered");
+        require(arbChainData.inboxAddress != address(0), "Arbchain not registered");
 
         IMarket market = IMarket(marketAddress);
         require(market.owner != address(0), "Market doesn't exist");
         
         IAugurPushBridge.MarketData memory marketData = augurPushBridge.bridgeMarket(market);
-        marketData.marketAddress = marketAddress;
-        bytes memory marketDataPayload = abi.encodeWithSignature("receiveMarketData(bytes)", marketData);
+        bytes memory marketDataPayload = abi.encodeWithSignature("receiveMarketData(bytes,address)",marketData, marketAddress);
         // todo: gas limit
         bytes memory l2MessagePayload = abi.encode(1000000, 0, arbChainData.marketGetterAddress, 0, marketDataPayload);
         IGlobalInbox(arbChainData.inboxAddress).sendL2Message(arbChainAddress, l2MessagePayload);
